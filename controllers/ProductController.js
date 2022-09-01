@@ -24,7 +24,7 @@ controller.show = async (req, res) => {
 	try {
 		const { id } = req.params;
 		if (!id) {
-			return json.sendStatus(404);
+			return res.status(404).json({msg: "Id not found"});
 		}
 		const result = await Product.findOne({ where: { id: id } });
 		res.json(result);
@@ -38,7 +38,7 @@ controller.update = async (req, res) => {
 		const { id } = req.params;
 		const body = req.body;
 		if (!id) {
-			return json.sendStatus(404);
+			return res.status(404).json({msg: "Id not found"});
 		}
 		console.log(id, body);
 		const result = await Product.update(body, { where: { id: id } });
