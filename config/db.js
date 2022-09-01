@@ -1,6 +1,6 @@
 import Sequelize from 'sequelize';
 
-const db = new Sequelize('pruebacoex', 'root', '', {
+const db = new Sequelize('prueba_coex_express', 'root', '', {
     host: '127.0.0.1',
     port: '3306',
     dialect: 'mysql',
